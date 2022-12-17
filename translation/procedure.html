@@ -1,0 +1,447 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="" name="description">
+<meta content="" name="author">
+
+<meta name="experiment-short-name" content="performance-chemical-sensor">
+<meta name="developer-institute" content="coep">
+<meta name="learning-unit" content="SIMULATE THE PERFORMANCE OF A CHEMICAL SENSOR">
+<meta name="task-name" content="Procedure">
+
+<!-- For iPhone -->
+<meta name="msapplication-TileColor" content="#4076e0">
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#4076e0">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#4076e0">
+<title>वर्चुअल लैब्स</title>
+<link rel="shortcut icon" href="./assets/images/favicon.ico">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Raleway&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/github-markdown.min.css">
+<link rel="stylesheet" href="./assets/css/vlabs-style.css">
+
+<script src="./assets/js/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<style>
+h1 {
+font-size: 1.8rem;
+}
+h2 {
+font-size: 1.4rem;
+}
+h3 {
+font-size: 1.2rem;
+}
+
+h2, h3 {
+font-weight: 800;
+}
+</style>
+</head>
+<body class="p-0 container-fluid vlabs-page d-flex flex-column justify-content-between">
+
+<header class="vlabs-header sticky-top bg-white">
+<nav class="p-0 navbar navbar-light d-flex align-items-stretch">
+
+<button class="navbar-toggler px-4" type="button" onclick="toggle()">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="d-flex justify-content-center">
+<a href="https://vlab.co.in" class="navbar-brand">
+<img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+</a>
+</div>
+
+<div id="headerNavbar" class="d-none border-top flex-grow-1 d-lg-flex align-items-center">
+<ul class="navbar-nav ml-auto text-center d-flex flex-md-row">
+<li class="nav-item px-2 m-1">
+<a href="https://vlab.co.in">होम</a>
+</li>
+<li class="nav-item px-2 m-1">
+<a href="https://vlab.co.in/participating-institutes">भागीदार</a>
+</li>
+<li class="nav-item px-2 m-1">
+<a href="https://vlab.co.in/contact-us">संपर्क</a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="container-fluid flex-fill d-flex flex-column vlabs-page-main">
+<div class="row d-flex justify-content-between">
+<div class="flex-column">
+
+<div class="row py-4 px-4 breadcrumbs">
+<a href="https://www.vlab.co.in/broad-area-electrical-engineering">
+इलेक्ट्रिकल इंजीनियरिंग
+</a>
+<span class="mx-2">
+<i aria-hidden="true" class="fa fa-angle-right"></i>
+</span>
+<a href="https://sl-coep.vlabs.ac.in">
+सेंसर मॉडलिंग & सिमुलेशन लैब
+</a>
+<span class="mx-2">
+<i aria-hidden="true" class="fa fa-angle-right"></i>
+</span>
+<a href="https://sl-coep.vlabs.ac.in/List of experiments.html">
+प्रयोग
+</a>
+</div>
+
+</div>
+<div class="flex-column">
+<div id="plugin-bug-report"></div>
+<div id="plugin-rating"></div>
+</div>
+</div>
+<div class="row flex-grow-1 d-flex flex-nowrap flex-column flex-lg-row">
+<div class="modal fade popupmenu" id="popupMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">
+<a href="https://vlab.co.in" class="navbar-brand">
+<img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+</a>
+</h5>
+<button type="button" class="btn-close align-self-center" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body nav-menu">
+<div>
+<div class="d-flex nav-menu-body">
+<a href="index.html" class="p-2 ">
+उद्देश्य
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="theory.html" class="p-2 ">
+सिद्धांत
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="pretest.html" class="p-2 ">
+प्रीटेस्ट
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="procedure.html" class="p-2  current-item ">
+कार्यप्रणाली
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="simulation.html" class="p-2 ">
+सिमुलेशन
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="posttest.html" class="p-2 ">
+पोस्टटेस्ट
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="references.html" class="p-2 ">
+सन्दर्भ
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="feedback.html" class="p-2 ">
+प्रतिपुष्टि
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="nav flex-column sidebar nav-menu flex-shrink-0 px-lg-4 align-items-center align-items-lg-start hidden d-none d-lg-flex" id="menu">
+<div>
+<div class="d-flex nav-menu-body">
+<a href="index.html" class="p-2 ">
+उद्देश्य
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="theory.html" class="p-2 ">
+सिद्धांत
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="pretest.html" class="p-2 ">
+प्रीटेस्ट
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="procedure.html" class="p-2  current-item ">
+कार्यप्रणाली
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="simulation.html" class="p-2 ">
+सिमुलेशन
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="posttest.html" class="p-2 ">
+पोस्टटेस्ट
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="references.html" class="p-2 ">
+सन्दर्भ
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="feedback.html" class="p-2 ">
+प्रतिपुष्टि
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+</div>          <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+<div class="text-center fix-spacing">
+<h3 id="simulate-the-performance-of-a-chemical-sensor">एक रासायनिक सेंसर के प्रदर्शन का अनुकरण करें</h3>
+
+</div>
+<h3 id="the-procedure-for-using-simulator-is-as-follows">सिम्युलेटर का उपयोग करने की प्रक्रिया इस प्रकार है:</h3>
+<h3 id="ph-measurement">pH माप</h3>
+<h3 id="level-1-ph-probe-calibration">स्तर 1: pH प्रोब कैलिबरेशन</h3>
+<h3 id="aim-study-calibration-of-a-ph-probe">उद्देश्य: pH प्रोब का कैलिबरेशन का अध्ययन करें ।</h3>
+<h4 id="step-by-step-procedure">चरण दर चरण प्रक्रिया:</h4>
+<ol>
+<li>जब सिम्युलेटर विंडो खुलती है, तो स्क्रीन पर कंट्रोल पैनल में प्रारंभिक pH मूल्य प्रदर्शित किया जाता है।  pH मूल्य का चयन करें जिसके लिए प्रोब को कैलिब्रेट किया जाना है।</li>
+<li>pH मूल्य में प्रवेश करने के बाद pH पद आउटपुट mV मूल्यों को प्रदर्शित किया जाता है।</li>
+<li>'Plot' पर क्लिक करें '।  pH पद मिलीवोल्ट का ग्राफ प्रदर्शित किया जाएगा।</li>
+<li>ग्राफ मिलने के बाद ग्राफ छिपाकर अगले प्रयोग पर स्विच करें यानी  स्तर 2</li>
+</ol>
+<h3 id="level-2-measurement-of-ph">स्तर 2: pH का माप</h3>
+<h5 id="aim-study-of-measurement-of-ph">उद्देश्य: pH के माप का अध्ययन करें।</h5>
+<p>इस प्रयोग में, सूत्र का उपयोग करके pH की गणना कर सकते हैं और pH माप प्रणाली को समझ सकते हैं।</p>
+<h4 id="step-by-step-procedure-1">चरण दर चरण प्रक्रिया:</h4>
+<ol>
+<li>मापन चित्र का पूरी तरह से अध्ययन करें।</li>
+<li>नमूना चुनें।  नमूने का चयन करने के बाद, pH मूल्य स्क्रीन पर प्रदर्शित किया जाएगा।</li>
+<li>गणना किए गए मिलीवोल्ट मूल्य दर्ज करें।  मिलीवोल्ट की गणना के लिए FORMULA टैब पर क्लिक करें।</li>
+<li>सूत्र का उपयोग करते हुए, नमूने के लिए मिलीवोल्ट आउटपुट के मूल्य की गणना करें।  सूत्र में, pHc का मूल्य 7 से विचलित pH मूल्य है। 7 से pH के मूल्य को घटाएं और प्रदान किए गए बॉक्स में उत्तर दर्ज करें (राउंड ऑफ के साथ 2 दशमलव तक)।  सबमिट बटन का उपयोग करके उत्तर प्रस्तुत करें।</li>
+<li>यदि आपकी गणना सही है, तो आउटपुट मिलीवोल्ट मूल्य स्क्रीन पर प्रदर्शित किया जाएगा।</li>
+<li>विभिन्न नमूनों के लिए आवश्यक होने पर प्रक्रिया दोहराएं</li>
+</ol>
+<h3 id="level-3-effect-of-temperature">स्तर 3: तापमान का प्रभाव</h3>
+<h5 id="aim-study-the-effect-of-temperature-change-on-measurement-of-ph">उद्देश्य: pH के माप पर तापमान परिवर्तन के प्रभाव का अध्ययन करें।</h5>
+<h4 id="step-by-step-procedure-2">चरण दर चरण प्रक्रिया:</h4>
+<ol>
+<li>इस लेवल में सैम्पल लेवल 2 में चयनित के समान है यह डिफ़ॉल्ट चयन है।  सैम्पल का pH नियंत्रण पैनल में प्रदर्शित किया जाता है।</li>
+<li>Get Temperature पर क्लिक करें।  नमूने का तापमान और आउटपुट मिल्ली वोल्ट अब स्क्रीन पर प्रदर्शित किया जाएगा।  इस मूल्य की तुलना व्यापक स्तर के आउटपुट मूल्य से करें।  पिछले स्तरों के लिए माना जाने वाला संदर्भ तापमान 25°C डिग्री सेल्सियस है।</li>
+<li>ग्राफ को प्लॉट करने के लिए प्लॉट टैब पर क्लिक करें।
+आप मूल्यों को सूत्र में डालकर उत्तर को सत्यापित कर सकते हैं।  केवल तापमान का मूल्य (केल्विन में) बदल जाएगा।
+सभी भागों के पूरा होने के बाद, आप यह पता लगाने के लिए परीक्षण पोस्ट करने के लिए आगे बढ़ सकते हैं कि क्या आपने प्रयोग के सभी पहलुओं को समझा है।</li>
+</ol>
+<h3 id="conductivity-measurement">कन्डक्टिविटी मेज़रमेंट</h3>
+<h3 id="level-1-conductivity-measurement">स्तर 1: कन्डक्टिविटी मेज़तमेंट</h3>
+<h3 id="aim-to-study-the-measurement-of-the-conductivity-of-the-sample">उद्देश्य:नमूने की चालकता के माप का अध्ययन करना।</h3>
+<h4 id="step-by-step-procedure-3">चरण दर चरण प्रक्रिया:</h4>
+<ol>
+<li>योजनाबद्ध आरेख का अध्ययन करें।</li>
+<li>ड्रॉप डाउन मेनू से नमूना चुनें।</li>
+<li>नमूने की एकाग्रता का चयन करें।</li>
+<li>सेल कॉन्स्टन्ट तय किया जाएगा जो स्क्रीन पर 1 के रूप में प्रदर्शित किया जाता है.</li>
+<li>डेटा में प्रवेश करने के बाद पीपीएम कान्सन्स्ट्रेशन, 25 °C पर समतुल्य वजन और घनत्व दाईं ओर के पैनल में प्रदर्शित होता है।</li>
+<li>परिकलित विशिष्ट चालन दर्ज करें। विशिष्ट चालन की गणना के लिए सूत्र टैब पर क्लिक करें।
+सूत्र का उपयोग करते हुए, चयनित नमूने के लिए कन्डक्टिविटी के मूल्य की गणना करें और प्रदान किए गए बॉक्स में उत्तर दर्ज करें (राउंड ऑफ के साथ 2 दशमलव तक)।  सबमिट बटन का उपयोग करके उत्तर प्रस्तुत करें।</li>
+<li>यदि आपकी गणना सही है तो इसे स्क्रीन पर प्रदर्शित किया जाएगा।  अन्यथा आपको पुनर्गणना करने की आवश्यकता है।</li>
+<li>एक ही नमूने की विभिन्न सांद्रता के लिए प्रक्रिया को दोहराएं।</li>
+<li>ग्राफ को प्लॉट करने के लिए न्यूनतम तीन गणनाएं आवश्यक हैं और तीन गणनाओं के बाद प्लॉट टैब को सक्रिय किया जाएगा।</li>
+<li>H प्लॉट टैब पर क्लिक करें और ग्राफ का निरीक्षण करें।  ग्राफ को छिपाएं और वैल्यूज टैब के अगले सेट के साथ आवश्यक होने पर अलग-अलग नमूनों के साथ प्रयोग को दोहराएं।</li>
+<li>ग्राफ का निरीक्षण करें और लेवल 2 टैब के साथ अगले स्तर पर स्विच करें।</li>
+</ol>
+<h3 id="level-2-effect-of-temperature">लेवल 2:तापमान का प्रभाव।</h3>
+<h5 id="aim-study-the-effect-of-temperature-change-on-the-measurement-of-conductivity">लक्ष्य: कन्डक्टिविटी के माप पर तापमान परिवर्तन के प्रभाव का अध्ययन करें।</h5>
+<p>इस प्रयोग में सूत्र का उपयोग करके तापमान का मूल्य बदल सकता है और कन्डक्टिविटी की गणना कर सकता है।</p>
+<h4 id="step-by-step-procedure-4">चरण दर चरण प्रक्रिया:</h4>
+<ol>
+<li>योजनाबद्ध आरेख का अध्ययन करें।</li>
+<li>चयनित नमूना डिफ़ॉल्ट रूप से उपयोगकर्ता ने लेवल 1 के लिए चुना है।</li>
+<li>पदार्थ की कान्सन्स्ट्रेशन का चयन करें।  चयनित कान्सन्स्ट्रेशन स्क्रीन पर प्रदर्शित की जाएगी।</li>
+<li>Get Temp पर क्लिक करें।  तापमान मूल्य और इसके तापमान गुणांक को स्क्रीन पर दाहिने हाथ की तरफ प्रदर्शित किया जाएगा।</li>
+<li>ब्याज के तापमान पर गणना कन्डक्टिविटी दर्ज करें।  कन्डक्टिविटी की गणना के लिए FORMULA टैब पर क्लिक करें।  सूत्र का उपयोग करते हुए, चयनित नमूने के लिए कन्डक्टिविटी के मूल्य की गणना करें और प्रदान किए गए बॉक्स में उत्तर दर्ज करें (राउंड ऑफ के साथ 2 दशमलव तक)।  सबमिट बटन का उपयोग करके उत्तर प्रस्तुत करें।</li>
+<li>यदि आपकी गणना सही है, तो चयनित तापमान पर आउटपुट कन्डक्टिविटी स्क्रीन पर प्रदर्शित की जाएगी।</li>
+<li>एक ही पदार्थ और कान्सन्स्ट्रेशन के विभिन्न तापमान के लिए प्रक्रिया दोहराएं।</li>
+<li>ग्राफ को प्लॉट करने के लिए न्यूनतम तीन गणनाएं आवश्यक हैं और तीन गणनाओं के बाद plot tab  को सक्रिय किया जाएगा।</li>
+<li>अध्ययन के बाद ग्राफ को छिपाएं और अलग-अलग पदार्थ और कान्सन्स्ट्रेशन के साथ प्रयोग को दोहराएं।</li>
+<li>ग्राफ का अवलोकन करें और अगले प्रयोग पर स्विच करें</li>
+</ol>
+<h3 id="level-3-effect-of-contamination">लेवल 3: कन्टैमिनेशन का प्रभाव</h3>
+<h3 id="aim-study-the-effect-of-contamination-on-measurement-of-ph">उद्देश्य:pH के माप पर कन्टैमिनेशन के प्रभाव का अध्ययन करें।</h3>
+<p>इस प्रयोग में, कोई कन्टैमिनेशन के मूल्य को बदल सकता है और पदार्थ की कन्डक्टिविटी पर इसके प्रभाव का निरीक्षण कर सकता है।</p>
+<h4 id="step-by-step-procedure-5">चरण दर चरण प्रक्रिया :</h4>
+<ol>
+<li>आरेख का पूरी तरह से अध्ययन करें।</li>
+<li>पदार्थ का चयन करें. चयनित पदार्थ स्क्रीन पर प्रदर्शित किया जाएगा.</li>
+<li>पदार्थ के कान्सन्स्ट्रेशन का चयन करें।  चयनित कान्सन्स्ट्रेशन स्क्रीन पर प्रदर्शित किया जाएगा।</li>
+<li>सेल कान्स्टन्ट तय किया जाएगा जो स्क्रीन पर 1 के रूप में प्रदर्शित किया जाता है.</li>
+<li>मिमी में कन्टैमिनेशन का चयन करें।</li>
+<li>कन्टैमिनेशन का चयन करने के बाद स्पेसिफिक कन्डक्टन्स, मोडिफाइड सेल कान्स्टन्ट, मोडिफाइड स्पेसिफिक कन्डक्टन्स मूल्य स्क्रीन पर प्रदर्शित किया जाता है।</li>
+<li>स्पेसिफिक कन्डक्टन्स की तुलना करके, मोडिफाइड स्पेसिफिक कन्डक्टन्स पदार्थ कन्डक्टिविटी पर कान्टेमिनेशन का प्रभाव देख सकती है।</li>
+<li>पदार्थ, कान्सन्स्ट्रेशन को बदलें और परिणामों का निरीक्षण करें।</li>
+</ol>
+
+</div>
+</div>
+</div>
+<footer class="text-light pt-2 vlabs-footer d-flex flex-column">
+<div class="row px-5 mx-0">
+<div class="col d-flex flex-column">
+<span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">कम्युनिटी लिंक्स</span>
+<a href="https://www.sakshat.ac.in/" class="text-light">साक्षात पोर्टल</a>
+<a href="http://outreach.vlabs.ac.in/" class="text-light">आउटरीच पोर्टल</a>
+<a href="https://vlab.co.in/faq" class="text-light">FAQ: वर्चुअल लैब्स</a>
+</div>
+<div class="col d-flex flex-column">
+<span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">हमसे संपर्क करें</span>
+<span> फोन: सामान्य जानकारी: 011-26582050 </span>
+<span> ईमेल: support@vlabs.ac.in </span>
+</div>
+<div class="col d-flex flex-column">
+<span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">हमारा अनुसरण करें</span>
+<div class="social-links">
+<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #55acee;" href="https://twitter.com/TheVirtualLabs">
+<i class="fa fa-twitter"></i>
+</a>
+<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #3b5998;" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/">
+<i class="fa fa-facebook"></i>
+</a>
+<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #e52d27;" href="https://www.youtube.com/watch?v=asxRaOgk6a0">
+<i class="fa fa-youtube"></i>
+</a>
+<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #2867B2;" href="https://in.linkedin.com/in/virtual-labs-008ba9136">
+<i class="fa fa-linkedin"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="m-0 py-2 text-center" style="font-family: &quot;Open Sans&quot;, sans-serif; background: #212121;">
+<a class="text-primary font-weight-bold" href="https://www.gnu.org/licenses/agpl-3.0.en.html"> AGPL 3.0 </a>
+&nbsp;&amp;&nbsp;
+<a class="text-primary font-weight-bold" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> क्रिएटिव कॉमन्स (CC BY-NC-SA 4.0) </a>
+</div>
+</footer>
+
+<script src="./assets/js/toggleSidebar.js"></script>
+
+
+
+</body></html>
